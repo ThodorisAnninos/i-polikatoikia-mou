@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+const { ObjectId } = mongoose.Types;
 
 const RequestSchema = new mongoose.Schema({
     title: {

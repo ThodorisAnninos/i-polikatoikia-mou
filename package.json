@@ -9,6 +9,9 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-navigation/bottom-tabs": "^6.5.8",
+    "@react-navigation/native": "^6.1.7",
+    "@react-navigation/stack": "^6.3.17",
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
@@ -24,6 +27,9 @@
     "react": "18.2.0",
     "react-dom": "^18.2.0",
     "react-native": "0.71.8",
+    "react-native-gesture-handler": "~2.9.0",
+    "react-native-heroicons": "^3.2.0",
+    "react-native-svg": "^13.11.0",
     "react-native-tailwindcss": "^1.1.11",
     "react-native-web": "~0.18.11"
   },
