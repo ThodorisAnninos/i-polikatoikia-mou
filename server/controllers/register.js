@@ -14,7 +14,7 @@ export const register = async (req, res) => {
             lastName,
             role,
             blockOfFlats,
-            appartements
+            appartement
         } = req.body;
 
         if (password == confirmPassword){
@@ -32,7 +32,7 @@ export const register = async (req, res) => {
             firstName,
             lastName,
             blockOfFlats,
-            appartements
+            appartement
         });
 
         const savedUser = await newUser.save();

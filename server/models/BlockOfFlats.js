@@ -42,7 +42,7 @@ const BlockOfFlatsSchema = new mongoose.Schema({
             ref:'User',
             required: true
         },
-        appartementId: {
+        appartementsId: {
             type: [ObjectId],
             ref:"Appartment",
             default:[]

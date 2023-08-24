@@ -38,7 +38,7 @@ const RequestSchema = new mongoose.Schema({
         type: [{
             date:{
                 type : Date,
-                default:Date.now()
+                default: Date.now()
             },
             title: {
                 type: String
@@ -51,6 +51,10 @@ const RequestSchema = new mongoose.Schema({
     },
     comments: {
         type: [{
+            date:{
+                type : Date,
+                default: Date.now()
+            },
             userId: {
                 type: ObjectId,
                 ref:'User',

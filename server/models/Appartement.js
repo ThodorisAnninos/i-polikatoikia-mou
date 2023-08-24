@@ -2,6 +2,9 @@ import mongoose from "mongoose";
 const { ObjectId } = mongoose.Types;
 
 const AppartementSchema = new mongoose.Schema({
+    label: {
+        type : String
+    },
     floor: {
         type: Number
     },
@@ -17,7 +20,7 @@ const AppartementSchema = new mongoose.Schema({
     ownerId: {
         type: ObjectId,
         ref:'User',
-        required:true,
+        required: true,
     },
     renterId: {
         type:ObjectId,

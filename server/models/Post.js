@@ -17,27 +17,13 @@ const PostSchema = new mongoose.Schema({
     },
     blockOfFlatsId:{
         type:ObjectId,
-        ref:'BlockOfFlats'//reference to Block of flats Model(Which have a
+        ref:'BlockOfFlats' // reference to Block of flats Model(Which have a
     },
     category: {
         type: Number,
         default: 0
     },
-    comments: {
-        type: [{
-            userId: {
-                type: ObjectId,
-                ref:'User',
-                required: true
-            },
-            content: {
-                type:String,
-                required: true
-            }
-        }],
-        default: []
-    },
-    likes: {
+    viewed: {
         type: [ObjectId],
         ref:"User",
         default:[]
