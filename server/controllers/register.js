@@ -5,7 +5,7 @@ import User from "../models/User.js";
 export const register = async (req, res) => {
     try {
         // λογικά θα ελέγχει αν είναι μοναδικό το email και το username αφού είναι unique στην βάση.
-        const {
+        let {
             username,
             email,
             password,
@@ -14,12 +14,19 @@ export const register = async (req, res) => {
             lastName,
             role,
             blockOfFlats,
-            appartement
+            appartements
         } = req.body;
 
-        if (password == confirmPassword){
+        console.log(`body: ${req.body}`)
+        console.log(`params: ${req.params}`)
+        console.log(req.body)
+        console.log(req.params)
+
+        if (password === confirmPassword){
             const salt = await bcrypt.genSalt();
             const passwordHash = await bcrypt.hash(password, salt);
+            password = passwordHash;
+            
         } else {
             return res.status(500).json({error : "Wrong password"});
         }
@@ -27,12 +34,12 @@ export const register = async (req, res) => {
         const newUser = new User({
             username,
             email,
-            password: passwordHash,
+            password,
             role,
             firstName,
             lastName,
             blockOfFlats,
-            appartement
+            appartements
         });
 
         const savedUser = await newUser.save();

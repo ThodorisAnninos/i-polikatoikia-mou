@@ -7,6 +7,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import { register } from "./controllers/register.js";
 import authRoutes from "./routes/auth.js";
+import userRoutes from "./routes/user.js";
 
 // CONFIGURATIONS
 dotenv.config();
@@ -21,6 +22,7 @@ app.use(cors());
 
 // ROUTES
 app.use("/auth", authRoutes);
+app.use("/", userRoutes);
 
 const PORT = process.env.PORT || 6001;
 mongoose.connect(process.env.MONGO_URL, {
