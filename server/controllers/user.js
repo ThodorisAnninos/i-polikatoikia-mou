@@ -25,7 +25,6 @@ export const deleteUser = async(req, res)=>{
 
 export const updateUser = async(req, res)=> {
     try{
-        console.log(req.body)
 
         const id=req.params.id;
         const {

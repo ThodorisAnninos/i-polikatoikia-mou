@@ -37,8 +37,15 @@ const UserSchema = new mongoose.Schema(
             default: []
         },
         appartements: {
-            type: [ObjectId],
-            ref: 'Appartement',
+            type: [{
+                appartementId: {
+                    type: ObjectId,
+                    ref: 'Appartement'
+                },
+                nickname: {
+                    type: String
+                }
+            }],
             default:[]
         }
     },

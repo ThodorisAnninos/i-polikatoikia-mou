@@ -8,6 +8,10 @@ import morgan from "morgan";
 import { register } from "./controllers/register.js";
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/user.js";
+import requestRoutes from "./routes/request.js";
+import postRoutes from "./routes/post.js";
+import blockOfFlatsRoutes from "./routes/blockOfFlats.js";
+import appartementRoutes from "./routes/appartement.js";
 
 // CONFIGURATIONS
 dotenv.config();
@@ -22,8 +26,14 @@ app.use(cors());
 
 // ROUTES
 app.use("/auth", authRoutes);
-app.use("/", userRoutes);
+app.use("/user", userRoutes);
+app.use("/request", requestRoutes);
+app.use("/post", postRoutes);
+app.use("/blockOfFlats", blockOfFlatsRoutes);
+app.use("/appartement", appartementRoutes);
 
+
+// MONGODB CONNECTION
 const PORT = process.env.PORT || 6001;
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,

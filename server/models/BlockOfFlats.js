@@ -31,22 +31,22 @@ const BlockOfFlatsSchema = new mongoose.Schema({
                 type: Number,
                 required: true
             }
-        },
-        usersId: {
-            type: [ObjectId],
-            ref:'User',
-            default: []
-        },
-        adminId: {
-            type: ObjectId,
-            ref:'User',
-            required: true
-        },
-        appartementsId: {
-            type: [ObjectId],
-            ref:"Appartment",
-            default:[]
         }
+    },
+    usersId: {
+        type: [ObjectId],
+        ref:'User',
+        default: []
+    },
+    adminId: {
+        type: ObjectId,
+        ref:'User',
+        required: true
+    },
+    appartementsId: {
+        type: [ObjectId],
+        ref:"Appartment",
+        default:[]
     }
 }, {timestamps: true});
 

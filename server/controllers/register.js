@@ -17,11 +17,6 @@ export const register = async (req, res) => {
             appartements
         } = req.body;
 
-        console.log(`body: ${req.body}`)
-        console.log(`params: ${req.params}`)
-        console.log(req.body)
-        console.log(req.params)
-
         if (password === confirmPassword){
             const salt = await bcrypt.genSalt();
             const passwordHash = await bcrypt.hash(password, salt);
