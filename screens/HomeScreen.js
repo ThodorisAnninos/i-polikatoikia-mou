@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+import { View, Text, Image, SafeAreaView, ScrollView } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import LogoScreen from './LogoScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { SafeAreaView } from 'react-native';
 import Header from '../components/header';
+import RequestsRow from '../components/requestsRow';
+import PostsRow from '../components/postsRow';
 
 
 
@@ -13,7 +14,16 @@ import Header from '../components/header';
 
 export default function HomeScreen() {
   return (
-    <Header />
-    
+    <View className="mb-28">
+      <Header />
+      <ScrollView>
+
+        
+        <PostsRow/>
+        <RequestsRow/>
+        {/* <RequestsRow/> */}
+        
+      </ScrollView>
+    </View>
   );
 }

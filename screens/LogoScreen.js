@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import { useLayoutEffect } from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-web';
 
 // import React from 'react'
@@ -20,7 +20,8 @@ export default function LogoScreen() {
         className="w-60 h-40"
         // style={{width: 40, height: 40}}
         />
-      <Text className="m-10 text-lg text-white font-bold">Εκκίνηση...</Text>
+        <ActivityIndicator className="mt-10" color="white"/>
+      {/* <Text className="m-10 text-lg text-white font-bold">Εκκίνηση...</Text> */}
     </View>
   )
 }
