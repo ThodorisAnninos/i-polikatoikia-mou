@@ -15,7 +15,7 @@ import PostCard from '../components/postCard';
 
 export default function PostsScreen() {
   return (
-    <SafeAreaView className="mb-28">
+    <SafeAreaView className="mb-28 flex-1">
       {/* <Header /> */}
       <Text className="text-2xl font-bold p-3">Ανακοινώσεις</Text>
       

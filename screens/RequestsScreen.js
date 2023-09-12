@@ -15,7 +15,7 @@ import RequestCard from '../components/requestCard';
 
 export default function RequestsScreen() {
   return (
-    <SafeAreaView className="mb-28">
+    <SafeAreaView className="mb-28 flex-1">
       {/* <Header /> */}
       <Text className="text-2xl font-bold p-3">Αιτήματα</Text>
       

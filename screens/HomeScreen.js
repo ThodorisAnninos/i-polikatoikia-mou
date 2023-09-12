@@ -14,7 +14,7 @@ import PostsRow from '../components/postsRow';
 
 export default function HomeScreen() {
   return (
-    <View className="mb-28">
+    <View className="mb-2 flex-1">
       <Header />
       <ScrollView>
 
