@@ -8,9 +8,8 @@ import Header from '../components/header';
 import RequestsRow from '../components/requestsRow';
 import PostsRow from '../components/postsRow';
 
-
-
 // import React from 'react';
+
 
 export default function HomeScreen() {
   return (

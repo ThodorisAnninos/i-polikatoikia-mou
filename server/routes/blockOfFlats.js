@@ -4,11 +4,11 @@ import { verifyToken } from "../middleware/verifyToken.js";
 
 const router = express.Router();
 
-router.get("/all", getBlocksOfFlats);
-router.get("/:id", getBlockOfFlatsByID);
-router.post("/new", addBlockOfFlats);
-router.delete("/delete/:id", deleteBlockOfFlats);
-router.put("/update/:id", updateBlockOfFlats);
+router.get("/all", verifyToken, getBlocksOfFlats);
+router.get("/:id", verifyToken, getBlockOfFlatsByID);
+router.post("/new", verifyToken, addBlockOfFlats);
+router.delete("/delete/:id", verifyToken, deleteBlockOfFlats);
+router.put("/update/:id", verifyToken, updateBlockOfFlats);
 
 
 export default router;
