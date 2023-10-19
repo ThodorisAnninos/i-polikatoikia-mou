@@ -37,7 +37,8 @@ export default function PostCard({title, date, category, description, full}) {
                 <ListBulletIcon color="#fd5602" size={20}/>
                 <Text className="ml-2">{category}</Text>
             </View>
-            <Text className="mt-3">{createShortDescription()}</Text>
+            {/* <Text className="mt-3">{createShortDescription()}</Text> */}
+            <Text numberOfLines={1} className="mt-3">{description}</Text>
         </View>
     </TouchableOpacity>
   )

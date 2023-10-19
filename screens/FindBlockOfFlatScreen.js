@@ -3,10 +3,13 @@ import React, { useState } from 'react'
 import { MagnifyingGlassIcon, ChevronRightIcon} from "react-native-heroicons/outline";
 import { Formik } from 'formik';
 import { ScrollView } from 'react-native-gesture-handler';
+import  MapView, { Marker }  from 'react-native-maps';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 export default function FindBlockOfFlatScreen() {
 
   const [blockOfFlat, setBlockOfFlat] = useState(null);
+
 
   const initialValueBlockOfFlatID = {
     blockOfFlatsID: ''
@@ -16,6 +19,7 @@ export default function FindBlockOfFlatScreen() {
     console.log(values.blockOfFlatsID);
     setBlockOfFlat({})
   }
+
 
   return (
     // <KeyboardAvoidingView
@@ -28,7 +32,7 @@ export default function FindBlockOfFlatScreen() {
 
 
       
-      <ScrollView className="flex-1  bg-white p-7">
+      <KeyboardAwareScrollView className="flex-1  bg-white p-7" extraHeight={120}>
         <SafeAreaView>
             <Image 
             source={require('../images/i-polikatoikia-mou-orange.png')}
@@ -62,6 +66,7 @@ export default function FindBlockOfFlatScreen() {
                   value={values.blockOfFlatsID}
                   error={Boolean(touched.blockOfFlatsID) && Boolean(errors.blockOfFlatsID)}
                   helperText={touched.blockOfFlatsID && errors.blockOfFlatsID}
+                  clearButtonMode='while-editing'
                   />
                   <TouchableOpacity className="mt-4 " onPress={handleSubmit}>
                     <MagnifyingGlassIcon color="#fd5602"/>
@@ -75,9 +80,29 @@ export default function FindBlockOfFlatScreen() {
 
           {blockOfFlat && (
           <View className="mt-10 bg-gray-200 rounded p-3" >
+              <MapView style={{width:"100%", height:200}}
+              initialRegion={{
+                latitude: 40.58508, // Update with your marker's latitude
+                longitude: 23.02170, // Update with your marker's longitude
+                latitudeDelta: 0.01, // Adjust the zoom level as needed
+                longitudeDelta: 0.01, // Adjust the zoom level as needed
+              }}>
+              
+              <Marker
+                  // key={1}
+                  coordinate={{
+                    latitude: 40.58508,
+                    longitude: 23.02170
+                  }}
+                  title={"Σημείο"}
+                  description={"Περιγραφή σημείου"}
+                />
+              </MapView>
             <TouchableOpacity>
+
+       
               {/* <Map/> */}
-              <View className="flex-row items-center">
+              <View className="flex-row items-center mt-2">
                 <View className="flex-1">
                   <Text className="font-bold text-lg mb-1">Πολυκατοικία #</Text>
                   <Text>[δρόμος] [αριθμός], [πόλη]</Text>
@@ -90,7 +115,7 @@ export default function FindBlockOfFlatScreen() {
           </View>
           )}
         </SafeAreaView>
-      </ScrollView>
+      </KeyboardAwareScrollView>
       </TouchableWithoutFeedback>
     // </KeyboardAvoidingView>
   )

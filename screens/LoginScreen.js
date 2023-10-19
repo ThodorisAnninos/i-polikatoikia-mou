@@ -46,7 +46,7 @@ export default function LoginScreen() {
 
     } catch (error) {
       // Handle login error (e.g., display an error message to the user).
-      console.error('Login failed:', error);
+      console.error('Login failed:',  error);
     }
   };
 
@@ -97,6 +97,8 @@ export default function LoginScreen() {
                 value={values.username}
                 error={Boolean(touched.username) && Boolean(errors.username)}
                 helperText={touched.username && errors.username}
+                autoCapitalize="none"
+                autoCorrect={false}
               />
 
               <TextInput

@@ -11,7 +11,7 @@ import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import FindBlockOfFlatScreen from './screens/FindBlockOfFlatScreen';
 import SelectAppartment from './screens/SelectAppartmentScreen';
-
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 
 
@@ -20,16 +20,18 @@ export default function App() {
   const Stack = createStackNavigator();
   return (
     <NavigationContainer>
-      <KeyboardAvoidingView
+      {/* <KeyboardAvoidingView
     behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     // keyboardVerticalOffset={Platform.OS==="ios" ? 64 : 0}
     style={{ flex: 1 }}
-  >
-      <Stack.Navigator>
-        {/* <Stack.Screen name="WelcomeLogo" component={LogoScreen} options={{ headerShown: false }}/> */}
+  > */}
 
-        {/* <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/> */}
-        {/* <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/> */}
+  {/* <KeyboardAwareScrollView extraHeight={120}> */}
+      <Stack.Navigator>
+        <Stack.Screen name="WelcomeLogo" component={LogoScreen} options={{ headerShown: false }}/>
+
+        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="FindBlockOfFlat" component={FindBlockOfFlatScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="SelectAppartment" component={SelectAppartment} options={{ headerShown: false }}/>
         
@@ -38,7 +40,8 @@ export default function App() {
         <Stack.Screen name="SingleRequest" component={SingleRequestScreen} options={{ headerShown: false, presentation: 'modal' }}/>
         <Stack.Screen name="SinglePost" component={SinglePostScreen} options={{ headerShown: false, presentation: 'modal' }}/>
       </Stack.Navigator>
-      </KeyboardAvoidingView>
+      {/* </KeyboardAvoidingView> */}
+      {/* </KeyboardAwareScrollView> */}
     </NavigationContainer>
   );
 }

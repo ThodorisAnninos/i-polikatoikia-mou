@@ -25,7 +25,7 @@ export default function RequestsScreen() {
 
 
       <ScrollView>
-        <RequestCard imagePath="null" title="request1" username="user1" category="category1" description="description1"full/>
+        <RequestCard imagePath="null" title="request1" username="user1" category="category1" description="Αυτή είναι μία πολλή μεγάλη περιγραφή! Ελπίζω ότι λειτουργεί το number of lines property για να γίνει όμορφο σε όλες τις συσκευές!"full/>
       </ScrollView>
 
     </SafeAreaView>

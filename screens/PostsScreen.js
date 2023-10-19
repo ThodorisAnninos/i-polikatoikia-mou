@@ -25,7 +25,7 @@ export default function PostsScreen() {
 
 
       <ScrollView>
-      <PostCard title="post1" category="category1" date="1/1/2000" description="Αυτή είναι μία μεγάλη περιγραφή!" full/>
+      <PostCard title="post1" category="category1" date="1/1/2000" description="Αυτή είναι μία πολλή μεγάλη περιγραφή! Ελπίζω ότι λειτουργεί το number of lines property για να γίνει όμορφο σε όλες τις συσκευές!" full/>
 
       </ScrollView>
 

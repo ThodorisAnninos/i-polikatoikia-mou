@@ -5,6 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import RadioGroup from 'react-native-radio-buttons-group';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 
 
@@ -50,6 +51,8 @@ const [selectedId, setSelectedId] = useState();
     {/* <StatusBar style="light"  /> */}
     
     <ScrollView className="bg-orange">
+    <KeyboardAwareScrollView extraHeight={120}>
+
     <SafeAreaView className="flex-1 items-center mb-10" >
 
     <Image
@@ -117,6 +120,8 @@ const [selectedId, setSelectedId] = useState();
       </TouchableOpacity>
  
     </SafeAreaView>
+    </KeyboardAwareScrollView>
+
     </ScrollView>
     </>
   )
