@@ -2,9 +2,6 @@ import mongoose from "mongoose";
 const { ObjectId } = mongoose.Types;
 
 const BlockOfFlatsSchema = new mongoose.Schema({
-    name: {
-        type: String,
-    },
     address: {
         road: {
             type: String,

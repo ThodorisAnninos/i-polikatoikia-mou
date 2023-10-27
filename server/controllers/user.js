@@ -34,7 +34,7 @@ export const updateUser = async(req, res)=> {
             confirmPassword,
             firstName,
             lastName,
-            role,
+            roles,
             blockOfFlats,
             appartements
         } = req.body;
@@ -44,7 +44,7 @@ export const updateUser = async(req, res)=> {
             username,
             email,
             password,
-            role,
+            roles,
             firstName,
             lastName,
             blockOfFlats,

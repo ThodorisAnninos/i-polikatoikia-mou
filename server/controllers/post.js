@@ -3,7 +3,7 @@ import Post from "../models/Post.js";
 export const getPostByID = async (req, res) => {
     try {
         const postID = req.params.id
-        let post = await Post.findById(requestID);
+        let post = await Post.findById(postID);
         if (!post) return res.status(400).json({error : "Post Not Found!"});
 
         res.status(201).json(post);

@@ -18,9 +18,19 @@ const UserSchema = new mongoose.Schema(
             type:String,
             required:true
         },
-        role: {
-            type: Number, //0-ιδιοκτήτης |1-ενοικιαστής |2-διαχειριστής πολυκατοικίας |3-χειριστής συστήματος
-            default: 0,
+        roles: {
+            type: [{
+                appartementId: {
+                    type: ObjectId,
+                    unique: true,
+                    ref: 'BlockOfFlats'
+                },
+                role: {
+                    type: Number, 
+                    required: true
+                }
+            }],
+            default:[],
             required: true
         },
         firstName: {

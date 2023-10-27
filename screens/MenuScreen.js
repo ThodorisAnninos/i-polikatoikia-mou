@@ -1,19 +1,32 @@
 import { View, Text } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import React from 'react'
+import React,  { useCallback, useMemo, useRef }  from 'react'
 import HomeScreen from './HomeScreen';
 import RequestsScreen from './RequestsScreen';
 import PostsScreen from './PostsScreen';
 import MyProfileScreen from './MyProfileScreen';
 import { UserIcon, HomeIcon, MegaphoneIcon, FolderIcon} from "react-native-heroicons/outline";
 import { UserIcon as UperIconSolid, HomeIcon as HomeIconSolid, MegaphoneIcon as MegaphoneIconSolid, FolderIcon as FolderIconSolid} from "react-native-heroicons/solid";
+import BottomSheet from '@gorhom/bottom-sheet';
 
 
 
 
 export default function MenuScreen() {
     const Tab = createBottomTabNavigator();
+
+
+  // ref
+  const bottomSheetRef = useRef(null);
+
+  // variables
+  const snapPoints = useMemo(() => ['50%'], []);
+
+
+
+
   return (
+    <>
     <Tab.Navigator>
         <Tab.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false, tabBarLabel: "Αρχική", tabBarIcon: ({ focused, color, size }) =>
             focused ? (
@@ -54,5 +67,18 @@ export default function MenuScreen() {
             }
         }}/>
     </Tab.Navigator>
+            
+    <BottomSheet
+    ref={bottomSheetRef}
+    index={0}
+    snapPoints={snapPoints}
+    enablePanDownToClose={true}
+  >
+    <View>
+      <Text>[ΕΔΩ ΕΜΦΑΝΙΖΟΝΤΑΙ ΟΙ ΠΟΛΥΚΑΤΟΙΚΙΕΣ]</Text>
+    </View>
+  </BottomSheet>
+
+  </>
   )
 }

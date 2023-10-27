@@ -12,7 +12,7 @@ export const register = async (req, res) => {
             confirmPassword,
             firstName,
             lastName,
-            role,
+            roles,
             blockOfFlats,
             appartements
         } = req.body;
@@ -30,7 +30,7 @@ export const register = async (req, res) => {
             username,
             email,
             password,
-            role,
+            roles,
             firstName,
             lastName,
             blockOfFlats,

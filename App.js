@@ -12,7 +12,8 @@ import RegisterScreen from './screens/RegisterScreen';
 import FindBlockOfFlatScreen from './screens/FindBlockOfFlatScreen';
 import SelectAppartment from './screens/SelectAppartmentScreen';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-
+import AddPostScreen from './screens/AddPostScreen';
+import AddRequestScreen from './screens/AddRequestScreen';
 
 
 export default function App() {
@@ -38,7 +39,11 @@ export default function App() {
         <Stack.Screen name="Menu" component={MenuScreen} options={{ headerShown: false }}/>
 
         <Stack.Screen name="SingleRequest" component={SingleRequestScreen} options={{ headerShown: false, presentation: 'modal' }}/>
+        <Stack.Screen name="AddRequest" component={AddRequestScreen} options={{ headerShown: false, presentation: 'modal' }}/>
+        
         <Stack.Screen name="SinglePost" component={SinglePostScreen} options={{ headerShown: false, presentation: 'modal' }}/>
+        <Stack.Screen name="AddPost" component={AddPostScreen} options={{ headerShown: false, presentation: 'modal' }}/>
+        
       </Stack.Navigator>
       {/* </KeyboardAvoidingView> */}
       {/* </KeyboardAwareScrollView> */}

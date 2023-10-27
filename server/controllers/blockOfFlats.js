@@ -37,7 +37,6 @@ export const updateBlockOfFlats = async(req, res)=> {
 
         const id=req.params.id;
         const {
-            name,
             address,
             usersId,
             adminId,
@@ -46,7 +45,6 @@ export const updateBlockOfFlats = async(req, res)=> {
 
 
         const newBlockOfFlats = new BlockOfFlats({
-            name,
             address,
             usersId,
             adminId,
@@ -65,15 +63,13 @@ export const updateBlockOfFlats = async(req, res)=> {
 export const addBlockOfFlats = async (req, res) => {
     try {
         const {
-            name,
             address,
             usersId,
             adminId,
             appartementsId
         } = req.body;
 
-        const newBlockOfFlats = new Post({
-            name,
+        const newBlockOfFlats = new BlockOfFlats({
             address,
             usersId,
             adminId,

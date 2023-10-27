@@ -110,6 +110,8 @@ export default function LoginScreen() {
                 value={values.password}
                 error={Boolean(touched.password) && Boolean(errors.password)}
                 helperText={touched.password && errors.password}
+                autoCapitalize="none"
+                autoCorrect={false}
               />
 
 

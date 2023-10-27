@@ -1,8 +1,11 @@
-import { View, Text, Image, SafeAreaView, TouchableOpacity } from 'react-native'
+import { View, Text, Image, SafeAreaView, TouchableOpacity, StyleSheet } from 'react-native'
 import { ChevronDownIcon } from "react-native-heroicons/solid";
-import React from 'react'
+import React, { useCallback, useMemo, useRef } from 'react'
+import BottomSheet from '@gorhom/bottom-sheet';
 
 const Header = () => {
+
+
   return (
     <SafeAreaView className="m-2">
         <View className="flex-row pb-3 items-center mx-4 space-x-2">
@@ -16,6 +19,7 @@ const Header = () => {
               </TouchableOpacity>
             </Text>
         </View>
+
 
     </SafeAreaView>
   )
