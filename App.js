@@ -9,11 +9,13 @@ import SinglePostScreen from './screens/SinglePostScreen';
 import SingleRequestScreen from './screens/SingleRequestScreen';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
-import FindBlockOfFlatScreen from './screens/FindBlockOfFlatScreen';
-import SelectAppartment from './screens/SelectAppartmentScreen';
+import FindBlockOfFlatsScreen from './screens/FindBlockOfFlatsScreen';
+import SelectAppartmentScreen from './screens/SelectAppartmentScreen';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import AddPostScreen from './screens/AddPostScreen';
 import AddRequestScreen from './screens/AddRequestScreen';
+import AddBlockOfFLatsScreen from './screens/AddBlockOfFlatsScreen';
+import AddAppartementsScreen from './screens/AddAppartementsScreen';
 
 
 export default function App() {
@@ -29,13 +31,17 @@ export default function App() {
 
   {/* <KeyboardAwareScrollView extraHeight={120}> */}
       <Stack.Navigator>
-        <Stack.Screen name="WelcomeLogo" component={LogoScreen} options={{ headerShown: false }}/>
+        {/* <Stack.Screen name="WelcomeLogo" component={LogoScreen} options={{ headerShown: false }}/> */}
 
-        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
-        <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
-        <Stack.Screen name="FindBlockOfFlat" component={FindBlockOfFlatScreen} options={{ headerShown: false }}/>
-        <Stack.Screen name="SelectAppartment" component={SelectAppartment} options={{ headerShown: false }}/>
+        {/* <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/> */}
+        {/* <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/> */}
         
+        {/* <Stack.Screen name="FindBlockOfFlats" component={FindBlockOfFlatsScreen} options={{ headerShown: false }}/> */}
+        {/* <Stack.Screen name="SelectAppartment" component={SelectAppartmentScreen} options={{ headerShown: false }}/> */}
+        
+        {/* <Stack.Screen name="AddBlockOfFlats" component={AddBlockOfFLatsScreen} options={{ headerShown: false }}/> */}
+        <Stack.Screen name="AddAppartementsScreen" component={AddAppartementsScreen} options={{ headerShown: false }}/>
+
         <Stack.Screen name="Menu" component={MenuScreen} options={{ headerShown: false }}/>
 
         <Stack.Screen name="SingleRequest" component={SingleRequestScreen} options={{ headerShown: false, presentation: 'modal' }}/>

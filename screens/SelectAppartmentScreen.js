@@ -5,7 +5,7 @@ import { Formik } from 'formik';
 import { ScrollView } from 'react-native-gesture-handler';
 import ItemButton from '../components/itemButton';
 
-export default function FindBlockOfFlatScreen() {
+export default function SelectAppartmentScreen() {
 
   const [blockOfFlat, setBlockOfFlat] = useState(null);
 

@@ -73,6 +73,7 @@ export default function MenuScreen() {
     index={0}
     snapPoints={snapPoints}
     enablePanDownToClose={true}
+    style={{backgroundColor:"light-grey"}}
   >
     <View>
       <Text>[ΕΔΩ ΕΜΦΑΝΙΖΟΝΤΑΙ ΟΙ ΠΟΛΥΚΑΤΟΙΚΙΕΣ]</Text>

@@ -6,7 +6,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import  MapView, { Marker }  from 'react-native-maps';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
-export default function FindBlockOfFlatScreen() {
+export default function FindBlockOfFlatsScreen() {
 
   const [blockOfFlat, setBlockOfFlat] = useState(null);
 
