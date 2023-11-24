@@ -62,16 +62,15 @@ export default function AddAppartementsScreen() {
   return (
     
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-
-      <KeyboardAwareScrollView className="flex-1 bg-white p-7" extraHeight={120}>
-        <SafeAreaView className="flex-1">
+      {/* <SafeAreaView className="flex-1 bg-white"> */}
+        <KeyboardAwareScrollView className="flex-1 p-7" extraHeight={120}>
             <Image 
             source={require('../images/i-polikatoikia-mou-orange.png')}
             style={{width:150, height:100, resizeMode: 'cover'}}
             className="mt-2"
             />
 
-        <View className="mb-4">
+
           <Text className="mt-8 font-bold text-orange-600 text-2xl">Πρόσθεσε τα διαμερίσματα!</Text>
           <Text className="mt-8">Πρόσθεσε ένα ένα τα διαμερίσματα της πολυκατοικίας!</Text>
 
@@ -94,7 +93,7 @@ export default function AddAppartementsScreen() {
                 <>
 
 
-                <View className="flex flex-row">
+              <View className="flex flex-row">
                 <TextInput
                     className="bg-white p-2 rounded border w-8/12"
                     placeholder="Ονομασία διαμερίσματος"
@@ -119,25 +118,25 @@ export default function AddAppartementsScreen() {
                     autoCorrect={false}
                     keyboardType='numeric'
                 />
-                </View>
+              </View>
                 
 
                 <View className="flex flex-row mt-2">
-                <View className="flex flex-row flex-1">
-                  <Checkbox
-                    value={isRented}
-                    onValueChange={()=>{
-                      setRented(!isRented);
-                    }}
-                    color={isRented ? '#fd5602' : undefined}
-                  />
-                  <Text className="ml-2 mt-0.5">Ενοικιαζόμενο</Text>
-                </View>
+                  <View className="flex flex-row flex-1">
+                    <Checkbox
+                      value={isRented}
+                      onValueChange={()=>{
+                        setRented(!isRented);
+                      }}
+                      color={isRented ? '#fd5602' : undefined}
+                    />
+                    <Text className="ml-2 mt-0.5">Ενοικιαζόμενο</Text>
+                  </View>
 
-                <TouchableOpacity className="rounded flex flex-row" onPress={handleSubmit}>
-                    <CheckIcon color="#fd5602"/>
-                    <Text className="mt-1 ml-1 text-orange-500">Προσθήκη</Text>
-                </TouchableOpacity>
+                  <TouchableOpacity className="rounded flex flex-row" onPress={handleSubmit}>
+                      <CheckIcon color="#fd5602"/>
+                      <Text className="mt-1 ml-1 text-orange-500">Προσθήκη</Text>
+                  </TouchableOpacity>
                 </View>
                 </>
               )}
@@ -155,14 +154,14 @@ export default function AddAppartementsScreen() {
 
           <Text className="font-bold mt-3 mb-3">Διαμερίσματα</Text>
           
-          <ScrollView className="flex-1">
+          <ScrollView className="h-20">
             {(appartments.length>0)?
             (appartments.map((appartment, index)=>{
               return <AppartmentListItem key={index} label={appartment.label} floor={appartment.floor} renter={appartment.rented} removeAppartment={removeAppartment}/>
             })) :
             (<Text className="opacity-40 text-center mt-5">Δε βρέθηκαν διαμερίσματα!</Text>)}
           </ScrollView>
-        </View>
+
 
 
 
@@ -170,13 +169,14 @@ export default function AddAppartementsScreen() {
             <Text className="text-center text-white font-bold text-lg">Συνέχεια</Text>
         </TouchableOpacity> */}
 
-        </SafeAreaView>
 
-        <TouchableOpacity className="bg-orange rounded  p-2 mt-5 w-full">
+
+      </KeyboardAwareScrollView>
+{/* 
+      <TouchableOpacity className="bg-orange rounded  p-2 m-7">
             <Text className="text-center text-white font-bold text-lg">Συνέχεια</Text>
         </TouchableOpacity>
-      </KeyboardAwareScrollView>
-
+      </SafeAreaView> */}
 
       </TouchableWithoutFeedback>
   )

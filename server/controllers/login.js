@@ -9,13 +9,14 @@ export const login = async (req, res) => {
             password
         } = req.body;
 
-        const user = await User.findOne({username : username});
+        let user = await User.findOne({username : username});
         if (!user) return res.status(400).json({error: "User doesn't exist"});
 
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) return res.status(400).json({error: "Password doesn't match"});
         
         const token = jwt.sign({id: user._id}, process.env.JWT_SECRET);
+        user = user.toObject();
         delete user.password;
         res.status(200).json({token, user});
 

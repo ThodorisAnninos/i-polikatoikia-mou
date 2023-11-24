@@ -3,14 +3,26 @@ import { StatusBar } from 'expo-status-bar';
 import { useLayoutEffect } from 'react';
 import { Text, View, Image, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-web';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // import React from 'react'
 
 export default function LogoScreen() {
   const navigation = useNavigation();
+  let page = 'Login';
+
+  checkLoggedIn = () => {
+    AsyncStorage.getItem('user').then( user =>{
+      user = JSON.parse(user);
+      if (user){
+        page = 'Menu';
+      }
+    });
+  }
 
   useLayoutEffect(()=> {
-    setTimeout( () =>  navigation.replace('Menu'), 3000)
+    checkLoggedIn();
+    setTimeout( () =>  navigation.replace(page), 3000)
   }, []);
 
   return (

@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, SafeAreaView, Image, ScrollView, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, SafeAreaView, Image, ScrollView, TouchableWithoutFeedback, Keyboard, Alert } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import axios from 'axios';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import { useNavigation } from '@react-navigation/native';
-// import {AsyncStorage} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function LoginScreen() {
 
@@ -16,8 +16,8 @@ export default function LoginScreen() {
   }
 
   const actionsAfterLogin = (response) => {
+    AsyncStorage.setItem('user', JSON.stringify(response.data));
     navigation.replace('Menu');
-    // AsyncStorage.setItem('token', response.token);
   }
 
   const loginSchema = yup.object().shape({
@@ -31,11 +31,8 @@ export default function LoginScreen() {
   };
 
   const handleLogin = async (values) => {
-    console.log(values.username);
-    console.log(values.password);
-
     try {
-      const response = await axios.post('http://localhost:3001/auth/login', {
+      const response = await axios.post('http://192.168.68.108:3001/auth/login', {
         username: values.username,
         password: values.password,
       });
@@ -46,7 +43,8 @@ export default function LoginScreen() {
 
     } catch (error) {
       // Handle login error (e.g., display an error message to the user).
-      console.error('Login failed:',  error);
+      console.log('Login failed:',  error.response.data.error);
+      Alert.alert(error.response.data.error);
     }
   };
 

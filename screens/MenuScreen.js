@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React,  { useCallback, useMemo, useRef }  from 'react'
 import HomeScreen from './HomeScreen';
@@ -8,19 +8,19 @@ import MyProfileScreen from './MyProfileScreen';
 import { UserIcon, HomeIcon, MegaphoneIcon, FolderIcon} from "react-native-heroicons/outline";
 import { UserIcon as UperIconSolid, HomeIcon as HomeIconSolid, MegaphoneIcon as MegaphoneIconSolid, FolderIcon as FolderIconSolid} from "react-native-heroicons/solid";
 import BottomSheet from '@gorhom/bottom-sheet';
-
-
+import BlockOfFlatsItem from '../components/blockOfFlatsItem';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export default function MenuScreen() {
-    const Tab = createBottomTabNavigator();
+  const Tab = createBottomTabNavigator();
 
 
   // ref
   const bottomSheetRef = useRef(null);
 
   // variables
-  const snapPoints = useMemo(() => ['50%'], []);
+  const snapPoints = useMemo(() => ['50%', '85%'], []);
 
 
 
@@ -76,7 +76,13 @@ export default function MenuScreen() {
     style={{backgroundColor:"light-grey"}}
   >
     <View>
-      <Text>[ΕΔΩ ΕΜΦΑΝΙΖΟΝΤΑΙ ΟΙ ΠΟΛΥΚΑΤΟΙΚΙΕΣ]</Text>
+      <Text className="m-3 mt-0 font-bold">Επίλεξε πολυκατοικία:</Text>
+      <ScrollView>
+        <BlockOfFlatsItem label="Pol1" address={{road: "roadd", number: 1, postalCode: 12345, city: "cityy", location: {lat: 0, lng: 0}}}/>
+        <BlockOfFlatsItem label="Pol2" address={{road: "roadd", number: 2, postalCode: 12345, city: "cityy", location: {lat: 0, lng: 0}}}/>
+        <BlockOfFlatsItem label="Pol2" address={{road: "roadd", number: 2, postalCode: 12345, city: "cityy", location: {lat: 0, lng: 0}}}/>
+        <BlockOfFlatsItem label="Pol2" address={{road: "roadd", number: 2, postalCode: 12345, city: "cityy", location: {lat: 0, lng: 0}}}/>
+      </ScrollView>
     </View>
   </BottomSheet>
 
