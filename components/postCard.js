@@ -24,7 +24,7 @@ export default function PostCard({title, date, category, description, full}) {
 
 
   return (
-    <TouchableOpacity className={`bg-white mr-2 ml-2 shadow ${s} rounded-lg`}
+    <TouchableOpacity className={`bg-white mr-2 ml-2 mb-5 shadow ${s} rounded-lg`}
       onPress={openClickedPostScreen}
     >
         <View className="p-3">

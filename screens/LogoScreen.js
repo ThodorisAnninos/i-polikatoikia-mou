@@ -12,12 +12,18 @@ export default function LogoScreen() {
   let page = 'Login';
 
   checkLoggedIn = () => {
-    AsyncStorage.getItem('user').then( user =>{
-      user = JSON.parse(user);
-      if (user){
+    AsyncStorage.getItem('token').then( token => {
+      if (token){
+        console.log(token);
         page = 'Menu';
       }
     });
+    // AsyncStorage.getItem('user').then( user =>{
+    //   user = JSON.parse(user);
+    //   if (user){
+    //     page = 'Menu';
+    //   }
+    // });
   }
 
   useLayoutEffect(()=> {

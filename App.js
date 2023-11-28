@@ -31,15 +31,15 @@ export default function App() {
 
   {/* <KeyboardAwareScrollView extraHeight={120}> */}
       <Stack.Navigator>
-        {/* <Stack.Screen name="WelcomeLogo" component={LogoScreen} options={{ headerShown: false }}/> */}
+        <Stack.Screen name="WelcomeLogo" component={LogoScreen} options={{ headerShown: false }}/>
 
-        {/* <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
         
         <Stack.Screen name="FindBlockOfFlats" component={FindBlockOfFlatsScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="SelectAppartment" component={SelectAppartmentScreen} options={{ headerShown: false }}/>
         
-        <Stack.Screen name="AddBlockOfFlats" component={AddBlockOfFLatsScreen} options={{ headerShown: false }}/> */}
+        <Stack.Screen name="AddBlockOfFlats" component={AddBlockOfFLatsScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="AddAppartementsScreen" component={AddAppartementsScreen} options={{ headerShown: false }}/>
 
         <Stack.Screen name="Menu" component={MenuScreen} options={{ headerShown: false }}/>

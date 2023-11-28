@@ -23,7 +23,7 @@ export default function RequestCard({imagePath, title, username, category, full,
   }
 
   return (
-    <TouchableOpacity className={`bg-white mr-2 ml-2 shadow rounded-lg ${s}`}
+    <TouchableOpacity className={`bg-white mb-5 mr-2 ml-2 shadow rounded-lg ${s}`}
       onPress={openClickedRequestScreen}
     >
         <Image

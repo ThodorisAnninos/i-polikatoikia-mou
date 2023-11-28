@@ -1,0 +1,6 @@
+{
+    "server" : "http://localhost",
+    "server_port" : "3001",
+    "server_ip" : "http://192.168.68.108",
+    "server_url" : "http://192.168.68.108:3001"
+}

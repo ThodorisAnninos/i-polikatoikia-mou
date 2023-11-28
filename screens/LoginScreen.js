@@ -6,6 +6,7 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+const config = require("../config.json");
 
 export default function LoginScreen() {
 
@@ -16,6 +17,7 @@ export default function LoginScreen() {
   }
 
   const actionsAfterLogin = (response) => {
+    AsyncStorage.setItem('token', response.data.token)
     AsyncStorage.setItem('user', JSON.stringify(response.data));
     navigation.replace('Menu');
   }
@@ -32,7 +34,7 @@ export default function LoginScreen() {
 
   const handleLogin = async (values) => {
     try {
-      const response = await axios.post('http://192.168.68.108:3001/auth/login', {
+      const response = await axios.post(config.server_url + '/auth/login', {
         username: values.username,
         password: values.password,
       });
