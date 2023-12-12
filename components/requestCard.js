@@ -3,7 +3,7 @@ import React from 'react'
 import {Text, TouchableOpacity, Image, View} from 'react-native'
 import { UserIcon, ListBulletIcon } from "react-native-heroicons/outline";
 
-export default function RequestCard({imagePath, title, username, category, full, description}) {
+export default function RequestCard({id, imagePath, title, username, category, description, comments, likes, location, progress, receiver, date, full}) {
   const navigation = useNavigation();
   
   s="w-64"
@@ -19,7 +19,7 @@ export default function RequestCard({imagePath, title, username, category, full,
   }
 
   const openClickedRequestScreen = () => {
-    navigation.navigate("SingleRequest");
+    navigation.navigate("SingleRequest", {id, imagePath, title, username, category, description, comments, likes, location, progress, receiver, date});
   }
 
   return (

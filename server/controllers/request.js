@@ -15,7 +15,8 @@ export const getRequestByID = async (req, res) => {
 
 export const getRequests = async(req, res)=>{
     try {
-        let requests = await Request.find();
+        
+        let requests = await Request.find().populate('userId', 'username').populate('receiver', 'username');
 
         res.status(201).json(requests);
     } catch (err) {

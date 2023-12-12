@@ -85,7 +85,7 @@ export default function PostsScreen() {
       <FlatList
         data={postsData}
         renderItem={({item}) => (
-          <PostCard title={item.title} category={item.category} date={item.date} description={item.description} full/>
+          <PostCard id={item._id} title={item.title} category={item.category} date={item.createdAt} description={item.description} author={item.authorId.username} viewed={item.viewed} full/>
         )}
         keyExtractor={item => item._id}
         refreshing={refreshing}

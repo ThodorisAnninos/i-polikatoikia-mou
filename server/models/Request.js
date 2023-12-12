@@ -31,13 +31,13 @@ const RequestSchema = new mongoose.Schema({
     },
     receiver: {
         type: ObjectId,
-        required: true,
+        ref: 'User',
         default: null // αν είναι ενοικιαστής στον ιδιοκτήτη ή κοινόχρηστα αλλιώς κοινόχρηστα.
     },
     progress: {
         type: [{
-            date:{
-                type : Date,
+            date: {
+                type: Date,
                 default: Date.now()
             },
             title: {
@@ -51,17 +51,17 @@ const RequestSchema = new mongoose.Schema({
     },
     comments: {
         type: [{
-            date:{
-                type : Date,
+            date: {
+                type: Date,
                 default: Date.now()
             },
             userId: {
                 type: ObjectId,
-                ref:'User',
+                ref: 'User',
                 required: true
             },
             content: {
-                type:String,
+                type: String,
                 required: true
             }
         }],
@@ -69,10 +69,10 @@ const RequestSchema = new mongoose.Schema({
     },
     likes: {
         type: [ObjectId],
-        ref:"User",
-        default:[]
+        ref: "User",
+        default: []
     }
-}, {timestamps: true});
+}, { timestamps: true });
 
 const Request = mongoose.model("Request", RequestSchema);
 export default Request;
